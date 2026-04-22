@@ -1,0 +1,259 @@
+    /*字形*/
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet');
+
+        html { /*平滑滑動*/
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F7F8F0;
+            color: #355872;
+            line-height: 1.6;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            padding: 18px 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #355872;
+            margin: 0 25px;
+            font-weight: 500;
+            font-size: 15px;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #7AAACE;
+        }
+
+        section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 120px 20px 80px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        section:last-child {
+            border-bottom: none;
+            padding-bottom: 120px;
+        }
+
+        h2.section-title { /*大標題*/
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 60px;
+            color: #355872;
+        }
+ 
+        .about-container { /*關於我*/
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+        }
+
+        .profile-pic {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+        }
+
+        .about-text {
+            max-width: 400px;
+        }
+
+        .about-text h1 {
+            font-size: 32px;
+            margin: 0 0 15px;
+        }
+
+        .info-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 0;
+            color: #666;
+        }
+
+        .info-list li {
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        /*專業技能*/
+        .skills-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .skill-item {
+            margin-bottom: 25px;
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        .progress-bar { /*技能條 整體*/
+            width: 100%;
+            height: 6px;
+            background-color: #9CD5FF;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress { /*技能條 填充*/
+            width: 0;
+            height: 100%;
+            background-color: #355872;
+            border-radius: 3px;
+            animation: fillProgress 1.2s ease forwards;
+        }
+
+        /*技能條滑動時間*/
+        .skill-item:nth-child(1) .progress { animation-delay: 0.15s; }
+        .skill-item:nth-child(2) .progress { animation-delay: 0.30s; }
+        .skill-item:nth-child(3) .progress { animation-delay: 0.45s; }
+        .skill-item:nth-child(4) .progress { animation-delay: 0.60s; }
+        .skill-item:nth-child(5) .progress { animation-delay: 0.75s; }
+
+        @keyframes fillProgress {
+            to { width: var(--target-width); }
+        }
+
+        /*證照*/
+        .certificates-flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .card {
+            width: 280px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-bottom: 3px solid #31393e8f; /*底線*/
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0 0 10px;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .exp-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .exp-item {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+        .exp-item.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .exp-img {
+            width: 40%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .exp-text {
+            width: 60%;
+        }
+
+        .exp-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        /*footer*/
+        footer {
+            background-color: #ffffff;
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid #eaeaea;
+        }
+
+        .footer-link {
+            color: #000000;
+            font-size: 14px;
+            text-decoration: none;
+            font-weight: 400;
+            transition: opacity 0.3s;
+        }
+
+        .footer-link:hover {
+            opacity: 0.7;
+        }
+
